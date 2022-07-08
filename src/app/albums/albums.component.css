@@ -1,0 +1,19 @@
+.sunny {
+  margin-top: 7%;
+  right: 70px;
+  position: relative;
+  font-weight: bold;
+  font-size: large;
+}
+
+.container-fluid {
+  margin-top: 20%;
+  position: relative;
+  left: 193px;
+}
+
+.buttons {
+  left: 280px;
+  padding-left: 20%;
+  margin-right: 20%;
+}

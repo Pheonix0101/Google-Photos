@@ -1,0 +1,20 @@
+/* .container{
+   height: 40px;
+    /* width: 700px; */
+   
+    /* right: 150px; */
+    
+
+/* } */ 
+.navbar{
+    width: 100%;
+    display: block;
+}
+.container-fluid{
+    width: 100%;
+    display: block;
+}
+
+.actionn li{
+ display: inline-block;   
+}
