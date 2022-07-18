@@ -1,21 +1,24 @@
-
-<div class="row">
-    <div class="col-md-8">
-      <div class="container-fluid">
-          <img src="https://th.bing.com/th/id/OIP.G_b3bt_RuAFJ0kuWHhXBmQHaEU?w=309&h=180&c=7&r=0&o=5&pid=1.7" alt="Lights" class="img-fluid" style="width:100%">
-          <div class="sunny">
-            <p>Ready To Add Some Photos?</p>
-          </div>
+<div class="row textcustom" *ngFor="let item of photoList2">
+ 
+    <div class="col-md-4">
+      <div class="card" >
+        <img
+          class="card-img-top mx-auto mt-auto mb-auto"
+          src="{{ item.baseUrl }}"
+          alt=""
+        />
         
       </div>
-      <div class="row-md-8">
-        <div class="buttons">
-        <button type="button" class="btn btn-outline-warning" (click)="googleStore()">Google PlayStore</button>
-        <button type="button" class="btn btn-outline-warning" (click)="appStore()">AppStore</button>
-
+      <hr>
+    </div>
+    
+    <div class="col-md-6">
+      <div class="sunny">
+      <p class="text-secondary">
+        <li>Name :- {{ item.filename  }}</li>
+        <li>Time :- {{ item.time | date: "EEEE, MMMM d, y" }}</li>
+        <li>Format :- {{ item.mimeType }}</li>
+        </p>
       </div>
-      
-     
     </div>
-    </div>
-</div>
+  </div>

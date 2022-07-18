@@ -106,5 +106,7 @@
       }
     }
   },
-  "defaultProject": "CAssign"
+  "cli": {
+    "analytics": false
+  }
 }

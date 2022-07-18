@@ -1,7 +1,5 @@
-import { GoogleLoginProvider, SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
 import { Component, OnInit } from '@angular/core';
-
-
+import { PhotosService } from '../services/googleAuth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,23 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  user!:SocialUser;
 
-  constructor(private _socialAuthService:SocialAuthService ) { }
-
+  constructor(private _fService: PhotosService ) { }
   ngOnInit(): void {
-    this._socialAuthService.authState.subscribe(
-      (user) => {
-        this.user=user;
-      }
-    )
+    this.user
   }
-
-  signWithGoogle():any{
-    this._socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
+ user:any;
+  onGoogle(){
+    this._fService.signInWithGoogle();
   }
-
-  signOut(){
-    this._socialAuthService.signOut();
+  onOut() {
+    this._fService.signOut();
+    console.warn("logged Out");
+    
   }
 }

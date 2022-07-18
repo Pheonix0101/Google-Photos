@@ -1,9 +1,9 @@
-.bg-transparent{
+/* .bg-transparent{
     background-color: transparent;
-}
-:host{
-    height: 80%;
-}
+} */
+/* :host{
+    height: 130%;
+} */
 
 .photo{
     object-fit:contain;
@@ -11,5 +11,6 @@
 
 .card{
     width:20rem;
+    height: 13rem;
     margin: 0 auto;
 }

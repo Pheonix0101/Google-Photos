@@ -7,13 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlbumsComponent implements OnInit {
 
+  list:any[] =[];
   constructor() { }
 
   ngOnInit(): void {
   }
 
   createAlbum(){
-    
+  console.warn('purushottam');
+  
+  
+  
   }
 
 }

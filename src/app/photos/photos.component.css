@@ -1,16 +1,9 @@
-.sunny{
 
-    margin-top: 7%;
-    left: 120px;
-    position: relative;
 
-    font-weight: bold;
-   font-size: xx-large;
-    
-}
 
-.buttons{
-    /* left: 280px; */
-    padding-left: 20%;
-    margin-right: 10%;
+
+.card {
+  margin-bottom: 33px;
+  box-shadow: 10rem;
+  color: darkkhaki;
 }

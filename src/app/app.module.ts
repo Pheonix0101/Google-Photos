@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { initializeApp } from 'firebase/app';
+import { GoogleAuthProvider } from 'firebase/auth';
 
-import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
-import {
-  GoogleLoginProvider,
-  FacebookLoginProvider
-} from '@abacritt/angularx-social-login';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PhotosComponent } from './photos/photos.component';
@@ -16,7 +13,8 @@ import { SharingComponent } from './sharing/sharing.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreateFormAlbumComponent } from './create-form-album/create-form-album.component';
 
 @NgModule({
   declarations: [
@@ -27,35 +25,20 @@ import { LoginComponent } from './login/login.component';
     SharingComponent,
     AlbumsComponent,
     LoginComponent,
+    CreateFormAlbumComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
-    SocialLoginModule
-   
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(
-              '1053665223274-plpsv0dgrbeue6erb2jag0f3mqvq5i7t.apps.googleusercontent.com'
-            )
-          },
-         
-        ],
-        onError: (err) => {
-          console.error(err);
-        }
-      } as SocialAuthServiceConfig,
-    }
-  ],
+  providers: [],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+// '247104778966-attan4n4ug2ateuo5ja18vmfs6lm0grm.apps.googleusercontent.com'

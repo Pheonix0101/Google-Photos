@@ -1,0 +1,16 @@
+<div class="row justify-content-center">
+
+
+<form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()" >
+    <div class="form-group">
+        <label for="albumName"></label>
+        <input type="text" class="form-control"
+        id="albumName" autocomplete="off" formControlName="albumName"
+        placeholder="Enter your Album Name">
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+
+
+
