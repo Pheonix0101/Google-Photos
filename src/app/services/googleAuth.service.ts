@@ -10,6 +10,7 @@ import {
 } from 'firebase/auth';
 import { PhotoServiceService } from './photo-service.service';
 import { Token } from '@angular/compiler';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -29,33 +30,43 @@ export class PhotosService {
 
   auth = getAuth();
   public static abtoken: any = '';
-  public static user: User
+  user!: User;
 
+  constructor(private _http: HttpClient) {}
 
-  constructor() {}
-
-  signInWithGoogle() {
+  async signInWithGoogle(): Promise<void> {
     const provider = new GoogleAuthProvider();
     provider.addScope('profile');
     provider.addScope('https://www.googleapis.com/auth/photoslibrary.readonly');
+    provider.addScope(
+      'https://www.googleapis.com/auth/photoslibrary.appendonly'
+    );
+    provider.addScope(
+      'https://www.googleapis.com/auth/photoslibrary.readonly.appcreateddata'
+    );
+    provider.addScope(
+      'https://www.googleapis.com/auth/photoslibrary.edit.appcreateddata'
+    );
 
     return signInWithPopup(this.auth, provider)
       .then((result) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
+    // this.auth.onAuthStateChanged
+
         const credential = GoogleAuthProvider.credentialFromResult(result);
         console.log(`credential = ${credential}`);
-
+      
         PhotosService.abtoken = credential?.accessToken;
         if (PhotosService.abtoken) {
           localStorage.setItem('token', PhotosService.abtoken);
         }
 
-        // console.log(`token = ${PhotosService.abtoken}`);
+        console.log(`token = ${PhotosService.abtoken}`);
 
         // The signed-in user info.
-        const user = result.user;
+        this.user = result.user;
         // console.log(provider);
-        // console.log(user);
+        // console.log(PhotosService.user);
       })
       .catch((error) => {
         // Handle Errors here.
@@ -69,7 +80,17 @@ export class PhotosService {
       });
   }
 
-  signOut() {
-    return this.signOut;
+  signOutt() {
+    // this.auth.signOut();
+    // this.user.delete();
+    signOut(this.auth)
+      .then((s) => {
+        console.log(s);
+      })
+      .catch((error) => {
+
+        console.warn(error);
+      });
+    this.user !=this.user;
   }
 }

@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateFormAlbumComponent } from './create-form-album/create-form-album.component';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CreateFormAlbumComponent } from './create-form-album/create-form-album.
     AlbumsComponent,
     LoginComponent,
     CreateFormAlbumComponent,
+    UploadComponent,
   ],
   imports: [
     BrowserModule,

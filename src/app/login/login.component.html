@@ -1,30 +1,32 @@
-<div *ngIf="!user" class="card text-center">
-  <h6 class="card-header">Login With Google</h6>
-  <div class="card-block">
-    <h4 class="card-title">Not Signed IN</h4>
-  </div>
+<div class="jumbotron bg transparent text-center">
+  <div *ngIf="!user || undefined" class="card text-center">
+    <h6 class="card-header">Login With Google</h6>
+    <div class="card-block">
+      <h4 class="card-title">Not Signed IN</h4>
+    </div>
 
-  <div class="card-block">
-    <a (click)="onGoogle()" class="signin btn btn-outline-primary"
-      ><i class="fa fa-google"></i><span class="signn"> SIGN IN</span></a
-    >
+    <div class="card-block">
+      <a (click)="onGoogle()" class="signin btn btn-outline-primary"
+        ><i class="fa fa-google"></i><span class="signn"> SIGN IN</span></a
+      >
+    </div>
   </div>
-</div>
-<div *ngIf="user" class="card text-center">
-  <h6 class="card-header">Login With Google</h6>
-  <div class="card-block"></div>
-  <img
-    *ngIf="user.photoUrl"
-    src="{{ user.photoUrl }}"
-    alt=""
-    class="card-img-top img-responsive photo"
-  />
-  <div class="card-block">
-    <h4 class="card-title">{{ user.name }}</h4>
-    <p class="card-text">{{ user.email }}</p>
-    <p class="card-text">Logged IN With {{ user.provider }}</p>
-  </div>
-  <div class="card-block">
-    <button class="btn btn-danger" (click)="onOut()">Sign Out</button>
+  <div *ngIf="user" class="card text-center">
+    <h6 class="card-header">Login With Google</h6>
+    <div class="card-block"></div>
+    <img
+      *ngIf="user.photoURL"
+      src="{{ user.photoURL }}"
+      alt=""
+      class="card-img-top img-responsive photo"
+    />
+    <div class="card-block">
+      <h4 class="card-title">{{ user.displayName }}</h4>
+      <p class="card-text">{{ user.email }}</p>
+      <!-- <p class="card-text">Logged IN With {{ user.providerId }}</p> -->
+    </div>
+    <div class="card-block">
+      <button class="btn btn-danger" (click)="onOut()">Sign Out</button>
+    </div>
   </div>
 </div>

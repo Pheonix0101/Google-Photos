@@ -6,10 +6,12 @@ import { ExploreComponent } from './explore/explore.component';
 import { LoginComponent } from './login/login.component';
 import { PhotosComponent } from './photos/photos.component';
 import { SharingComponent } from './sharing/sharing.component';
+import { UploadComponent } from './upload/upload.component';
 
 const routes: Routes = [
-  {path:'Photos', component: PhotosComponent},
   {path:'Login', component: LoginComponent},
+  {path:'Photos', component: PhotosComponent},
+  {path:'upload', component: UploadComponent},
   {path: 'Explore',component:ExploreComponent},
   {path:'Sharing', component:SharingComponent},
   {path:'Album', component:AlbumsComponent},
