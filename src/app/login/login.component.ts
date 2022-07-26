@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User,Auth, getAuth } from 'firebase/auth';
-import { PhotosService } from '../services/googleAuth.service';
+import { User, Auth, getAuth } from 'firebase/auth';
+import { googleAuth } from '../services/googleAuth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,21 +8,30 @@ import { PhotosService } from '../services/googleAuth.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  user!: User;
+  user: any;
   auth = getAuth();
-  constructor(private _fService: PhotosService) {}
+  constructor(private _fService: googleAuth) {}
   ngOnInit(): void {
     this.user = this._fService.user;
+
     // this.auth.onAuthStateChanged
+    console.warn('login component is running');
+
     // console.log(this.user);
+    console.log(this._fService.user);
   }
-  onGoogle() {
+  async onGoogle() {
+    await this._fService.signInWithGoogle();
+    // window.location.reload();
     
-    this._fService.signInWithGoogle();
+
+    console.log(this._fService.user);
+    console.log('log In.....');
   }
   onOut() {
     this._fService.signOutt();
+    window.location.reload();
     // console.warn('logged Out');
-    this.user != this._fService.user
+    // this.user != this._fService.user
   }
 }

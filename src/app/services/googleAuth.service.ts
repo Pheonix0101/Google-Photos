@@ -15,7 +15,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
-export class PhotosService {
+export class googleAuth {
   firebaseConfig = {
     apiKey: 'AIzaSyDKQzNGB02Z_LiXsE1lWb11BmERHzpqZbI',
     authDomain: 'lenovoangular.firebaseapp.com',
@@ -48,36 +48,38 @@ export class PhotosService {
       'https://www.googleapis.com/auth/photoslibrary.edit.appcreateddata'
     );
 
-    return signInWithPopup(this.auth, provider)
-      .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-    // this.auth.onAuthStateChanged
-
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        console.log(`credential = ${credential}`);
+    const result = signInWithPopup(this.auth, provider);
+      //  ((result) => {
       
-        PhotosService.abtoken = credential?.accessToken;
-        if (PhotosService.abtoken) {
-          localStorage.setItem('token', PhotosService.abtoken);
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        this.auth.onAuthStateChanged
+
+        const credential = GoogleAuthProvider.credentialFromResult(await result);
+        console.log(`credential = ${credential}`);
+
+        googleAuth.abtoken = credential?.accessToken;
+        if (googleAuth.abtoken) {
+          localStorage.setItem('token', googleAuth.abtoken);
         }
 
-        console.log(`token = ${PhotosService.abtoken}`);
+        console.log(`token = ${googleAuth.abtoken}`);
 
         // The signed-in user info.
-        this.user = result.user;
+        this.user = (await result).user;
         // console.log(provider);
-        // console.log(PhotosService.user);
-      })
-      .catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // The email of the user's account used.
-        const email = error.customData.email;
-        // The AuthCredential type that was used.
-        const credential = GoogleAuthProvider.credentialFromError(error);
-        // ...
-      });
+        console.log(this.user);
+        // console.log(this.user.photoURL);
+      // })
+      // .catch((error) => {
+      //   // Handle Errors here.
+      //   const errorCode = error.code;
+      //   const errorMessage = error.message;
+      //   // The email of the user's account used.
+      //   const email = error.customData.email;
+      //   // The AuthCredential type that was used.
+      //   const credential = GoogleAuthProvider.credentialFromError(error);
+      //   // ...
+      // });
   }
 
   signOutt() {
@@ -88,9 +90,8 @@ export class PhotosService {
         console.log(s);
       })
       .catch((error) => {
-
         console.warn(error);
       });
-    this.user !=this.user;
+    this.user != this.user;
   }
 }

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import Photo from '../models/photo';
-import { PhotosService } from './googleAuth.service';
+import { googleAuth } from './googleAuth.service';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +9,7 @@ import { PhotosService } from './googleAuth.service';
 export class PhotoServiceService {
   photoList: Photo[] = [];
   token: any;
-  constructor(private _http: HttpClient, private _googleAuth: PhotosService) {}
+  constructor(private _http: HttpClient, private _googleAuth: googleAuth) {}
 
   async gettingdataFromApi(): Promise<void> {
     this.token = localStorage.getItem('token');

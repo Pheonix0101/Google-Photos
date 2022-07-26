@@ -9,7 +9,7 @@ export class UploadServiceService {
   token: any;
   UToken: any;
   constructor(private _http: HttpClient) {}
-
+  
   async uploadingDataToApi(): Promise<void> {
     this.token = localStorage.getItem('token');
     console.log('running');

@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import Photo from '../models/photo';
-import { PhotosService } from '../services/googleAuth.service';
+import { googleAuth } from '../services/googleAuth.service';
 import { PhotoServiceService } from '../services/photo-service.service';
 
 @Component({

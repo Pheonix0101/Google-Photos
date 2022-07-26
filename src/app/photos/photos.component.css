@@ -6,4 +6,9 @@
   margin-bottom: 33px;
   box-shadow: 10rem;
   color: darkkhaki;
-}
+} 
+
+/* .card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
+} */
