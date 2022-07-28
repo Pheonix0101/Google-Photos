@@ -1,42 +1,18 @@
-<div class="row textcustom" *ngFor="let item of photoList2">
- 
-    <div class="col-md-4">
-      <div class="card" >
-        <img
-          class="card-img-top mx-auto mt-auto mb-auto"
-          src="{{ item.baseUrl }}"
-          alt=""
-        />
-        
-      </div>
-      <hr>
-    </div>
-    
-    <div class="col-md-6">
+<div class="row textcustom" >
+  <div class="col-md-4" *ngFor="let item of photoList2">
+    <div class=" sunnycard">
+      <img
+        class="card-img-top mx-auto mt-auto mb-auto sunnyimg" 
+        src="{{ item.baseUrl }}"
+        alt=""
+      />
       <div class="sunny">
-      <p class="text-secondary">
-        <li>Name :- {{ item.filename  }}</li>
-        <li>Time :- {{ item.time | date: "EEEE, MMMM d, y" }}</li>
-        <li>Format :- {{ item.mimeType }}</li>
+        <p class="text-secondary">
+          <li>Time :- {{ item.time | date: "EEEE, MMMM d, y" }}</li>
         </p>
       </div>
     </div>
   </div>
 
-
-  
-
-    <!-- <div class="container-fluid" >
-      <div class="card-columns" *ngFor="let item of photoList2">
-          <div class="col-md-4 mt-3">
-              <div class="card">
-                
-                    
-                          <img class="" src="http://via.placeholder.com/300x180" alt="Card image cap">
-                      </div>
-                     
-              </div>
-              </div>
-          </div> -->
-     
- 
+   
+  </div>

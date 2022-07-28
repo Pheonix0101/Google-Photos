@@ -41,45 +41,41 @@ export class googleAuth {
     provider.addScope(
       'https://www.googleapis.com/auth/photoslibrary.appendonly'
     );
-    provider.addScope(
-      'https://www.googleapis.com/auth/photoslibrary.readonly.appcreateddata'
-    );
-    provider.addScope(
-      'https://www.googleapis.com/auth/photoslibrary.edit.appcreateddata'
-    );
+
+    provider.addScope('https://www.googleapis.com/auth/photoslibrary');
 
     const result = signInWithPopup(this.auth, provider);
-      //  ((result) => {
-      
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        this.auth.onAuthStateChanged
+    //  ((result) => {
 
-        const credential = GoogleAuthProvider.credentialFromResult(await result);
-        console.log(`credential = ${credential}`);
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    this.auth.onAuthStateChanged;
 
-        googleAuth.abtoken = credential?.accessToken;
-        if (googleAuth.abtoken) {
-          localStorage.setItem('token', googleAuth.abtoken);
-        }
+    const credential = GoogleAuthProvider.credentialFromResult(await result);
+    console.log(`credential = ${credential}`);
 
-        console.log(`token = ${googleAuth.abtoken}`);
+    googleAuth.abtoken = credential?.accessToken;
+    if (googleAuth.abtoken) {
+      localStorage.setItem('token', googleAuth.abtoken);
+    }
 
-        // The signed-in user info.
-        this.user = (await result).user;
-        // console.log(provider);
-        console.log(this.user);
-        // console.log(this.user.photoURL);
-      // })
-      // .catch((error) => {
-      //   // Handle Errors here.
-      //   const errorCode = error.code;
-      //   const errorMessage = error.message;
-      //   // The email of the user's account used.
-      //   const email = error.customData.email;
-      //   // The AuthCredential type that was used.
-      //   const credential = GoogleAuthProvider.credentialFromError(error);
-      //   // ...
-      // });
+    console.log(`token = ${googleAuth.abtoken}`);
+
+    // The signed-in user info.
+    this.user = (await result).user;
+    // console.log(provider);
+    console.log(this.user);
+    // console.log(this.user.photoURL);
+    // })
+    // .catch((error) => {
+    //   // Handle Errors here.
+    //   const errorCode = error.code;
+    //   const errorMessage = error.message;
+    //   // The email of the user's account used.
+    //   const email = error.customData.email;
+    //   // The AuthCredential type that was used.
+    //   const credential = GoogleAuthProvider.credentialFromError(error);
+    //   // ...
+    // });
   }
 
   signOutt() {

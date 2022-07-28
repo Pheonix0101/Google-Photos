@@ -6,13 +6,13 @@
     </div>
 
     <div class="card-block">
-      <a (click)="onGoogle()" class="signin btn btn-outline-primary"
+      <a (click)="onGoogle()" class="signin btn btn-outline-success"
         ><i class="fa fa-google"></i><span class="signn"> SIGN IN</span></a
       >
     </div>
   </div>
   <div *ngIf="user" class="card text-center">
-    <h6 class="card-header">Login With Google</h6>
+    <h6 class="card-header">Logged In </h6>
     <div class="card-block"></div>
     <img
       *ngIf="user.photoURL"

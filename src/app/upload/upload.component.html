@@ -1,4 +1,12 @@
+<div class="container-fluid">
+  <div class="head">
+    <h3 style="color: gray">Upload Your Photos Here</h3>
+  </div>
 
-<h2>File upload</h2>
-<input type="file" (change)="onFileSelected($event)">
-<button type="button" class="btn btn-outline-success" (click)="onUpload()">Upload</button>
+  <div class="box">
+    <input type="file" style="color: red" (change)="onFileSelected($event)"/>
+    <button type="button" class="btn btn-outline-warning" (click)="onUpload()">
+      Upload
+    </button>
+  </div>
+</div>

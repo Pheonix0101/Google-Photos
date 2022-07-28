@@ -1,0 +1,12 @@
+.head {
+  height: auto;
+  padding-top: 3rem;
+  text-justify: auto;
+}
+
+.box {
+  height: auto;
+  box-sizing: border-box;
+  margin-top: 50px;
+  text-decoration-color: blue;
+}

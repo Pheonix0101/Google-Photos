@@ -1,14 +1,12 @@
+.text-secondary {
+  text-align: center;
+  font-weight: 700;
+  padding-top: 10px;
+}
 
-
-
-
-.card {
-  margin-bottom: 33px;
-  box-shadow: 10rem;
-  color: darkkhaki;
-} 
-
-/* .card-horizontal {
-  display: flex;
-  flex: 1 1 auto;
-} */
+.sunnycard img {
+  height: 400px;
+}
+.sunnycard {
+  padding: 8px;
+}

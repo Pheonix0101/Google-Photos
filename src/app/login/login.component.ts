@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User, Auth, getAuth } from 'firebase/auth';
 import { googleAuth } from '../services/googleAuth.service';
 
@@ -10,23 +11,16 @@ import { googleAuth } from '../services/googleAuth.service';
 export class LoginComponent implements OnInit {
   user: any;
   auth = getAuth();
-  constructor(private _fService: googleAuth) {}
+  constructor(private _fService: googleAuth, private _route: Router) {}
   ngOnInit(): void {
     this.user = this._fService.user;
-
-    // this.auth.onAuthStateChanged
-    console.warn('login component is running');
-
-    // console.log(this.user);
-    console.log(this._fService.user);
   }
   async onGoogle() {
     await this._fService.signInWithGoogle();
     // window.location.reload();
-    
+    this._route.navigate(['/Photos'])
 
-    console.log(this._fService.user);
-    console.log('log In.....');
+  
   }
   onOut() {
     this._fService.signOutt();

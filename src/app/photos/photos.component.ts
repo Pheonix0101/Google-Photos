@@ -13,10 +13,10 @@ export class PhotosComponent implements OnInit {
   photoList2: Photo[] = [];
 
   constructor(
-    private _http: HttpClient,
     private _pService: PhotoServiceService
   ) {}
 
+  
   async ngOnInit(): Promise<void> {
     this._pService.gettingdataFromApi();
     this.photoList2 = this._pService.photoList;
