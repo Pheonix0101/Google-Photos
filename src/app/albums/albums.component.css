@@ -12,8 +12,19 @@
   left: 193px;
 }
 
+.sunnyCard img {
+  height: 300px;
+  padding-top: 10px;
+}
+
 .buttons {
-  left: 280px;
-  padding-left: 20%;
-  margin-right: 20%;
+  left: 180px;
+  padding-top: 13px;
+}
+
+.buttonsss {
+  left: 190px;
+
+  margin-top: 10px;
+  padding: 10px;
 }

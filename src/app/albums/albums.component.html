@@ -1,21 +1,31 @@
 <div class="row">
-  <div class="col-md-8">
-    <div class="container-fluid">
+  <div class="col-md-4" *ngFor="let item of albumListCopy">
+    <a routerLink="/albumView" class="btn btn-dark">View Album</a>
+    <div class="sunnyCard">
       <img
-        src="https://th.bing.com/th/id/OIP._mLvRuhNkdAtKuFKPhIGtwHaEK?w=283&h=180&c=7&r=0&o=5&pid=1.7"
-        alt="Lights"
-        class="img-fluid"
-        style="width: 30%"
+        class="card-img-top mx-auto mt-auto mb-auto sunnyimg"
+        src="{{ item.coverPhotoBaseUrl }}"
+        alt=""
       />
-      <div class="sunny">
-        <p>The Album you create are shown here</p>
+      <h5>{{ item.title }}</h5>
+      <div class="buttonsss">
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="addPhotoToThisAlbum(item.id)"
+        >
+          Add Photos
+        </button>
       </div>
+      <hr />
     </div>
-    <div class="row-md-8">
-      <div class="buttons">
-        <a routerLink="/createAlbum" class="btn btn-outline-warning">Create Album</a> 
-        
-      </div>
-    </div>
+  </div>
+</div>
+<div class="row-md-8">
+  <h3>Create new Album</h3>
+  <div class="buttons">
+    <a routerLink="/createAlbum" class="btn btn-outline-warning"
+      >Create Album</a
+    >
   </div>
 </div>

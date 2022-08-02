@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { getFirestore} from 'firebase/firestore/lite';
 import {
   getAuth,
   GoogleAuthProvider,
@@ -8,8 +8,6 @@ import {
   signOut,
   User,
 } from 'firebase/auth';
-import { PhotoServiceService } from './photo-service.service';
-import { Token } from '@angular/compiler';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -41,6 +39,7 @@ export class googleAuth {
     provider.addScope(
       'https://www.googleapis.com/auth/photoslibrary.appendonly'
     );
+    provider.addScope('https://www.googleapis.com/auth/photoslibrary.sharing');
 
     provider.addScope('https://www.googleapis.com/auth/photoslibrary');
 
@@ -62,25 +61,12 @@ export class googleAuth {
 
     // The signed-in user info.
     this.user = (await result).user;
-    // console.log(provider);
     console.log(this.user);
-    // console.log(this.user.photoURL);
-    // })
-    // .catch((error) => {
-    //   // Handle Errors here.
-    //   const errorCode = error.code;
-    //   const errorMessage = error.message;
-    //   // The email of the user's account used.
-    //   const email = error.customData.email;
-    //   // The AuthCredential type that was used.
-    //   const credential = GoogleAuthProvider.credentialFromError(error);
-    //   // ...
-    // });
+   
   }
 
   signOutt() {
-    // this.auth.signOut();
-    // this.user.delete();
+  
     signOut(this.auth)
       .then((s) => {
         console.log(s);
@@ -88,6 +74,5 @@ export class googleAuth {
       .catch((error) => {
         console.warn(error);
       });
-    this.user != this.user;
   }
 }

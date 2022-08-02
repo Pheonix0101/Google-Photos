@@ -8,26 +8,26 @@ import { AppComponent } from './app.component';
 import { PhotosComponent } from './photos/photos.component';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
-import { ExploreComponent } from './explore/explore.component';
-import { SharingComponent } from './sharing/sharing.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateFormAlbumComponent } from './create-form-album/create-form-album.component';
 import { UploadComponent } from './upload/upload.component';
+import { AlbumphotoComponent } from './albumphoto/albumphoto.component';
+import { AlbumViewComponent } from './album-view/album-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PhotosComponent,
     HeaderComponent,
-    ExploreComponent,
-    SharingComponent,
     AlbumsComponent,
     LoginComponent,
     CreateFormAlbumComponent,
     UploadComponent,
+    AlbumphotoComponent,
+    AlbumViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +35,8 @@ import { UploadComponent } from './upload/upload.component';
     RouterModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
+    
   ],
   providers: [],
 

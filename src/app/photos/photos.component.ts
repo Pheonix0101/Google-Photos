@@ -1,4 +1,3 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import Photo from '../models/photo';
 import { googleAuth } from '../services/googleAuth.service';

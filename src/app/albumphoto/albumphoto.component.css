@@ -1,0 +1,13 @@
+.text-secondary {
+  text-align: center;
+  font-weight: 700;
+  padding-top: 10px;
+}
+
+.sunnycard img {
+  height: 400px;
+  padding: 10px;
+}
+.sunnycard {
+  padding: 8px;
+}

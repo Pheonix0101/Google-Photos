@@ -12,7 +12,6 @@ export class UploadServiceService {
 
   constructor(private _http: HttpClient) {}
 
-
   async uploadingDataToApi(): Promise<void> {
     this.token = localStorage.getItem('token');
 
@@ -39,7 +38,6 @@ export class UploadServiceService {
       .catch((err) => {
         console.log(err);
       });
-    console.log();
 
     const rise = await this._http.post(
       'https://photoslibrary.googleapis.com/v1/mediaItems:batchCreate',
@@ -48,7 +46,7 @@ export class UploadServiceService {
           {
             description: 'item-description',
             simpleMediaItem: {
-              fileName: 'UploadComponent.selectedFile?.name',
+              fileName: UploadComponent.selectedFile?.name,
               uploadToken: this.uToken,
             },
           },

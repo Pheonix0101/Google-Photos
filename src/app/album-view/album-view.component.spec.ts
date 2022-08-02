@@ -1,20 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SharingComponent } from './sharing.component';
+import { AlbumViewComponent } from './album-view.component';
 
-describe('SharingComponent', () => {
-  let component: SharingComponent;
-  let fixture: ComponentFixture<SharingComponent>;
+describe('AlbumViewComponent', () => {
+  let component: AlbumViewComponent;
+  let fixture: ComponentFixture<AlbumViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SharingComponent ]
+      declarations: [ AlbumViewComponent ]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(SharingComponent);
+    fixture = TestBed.createComponent(AlbumViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

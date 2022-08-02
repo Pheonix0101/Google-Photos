@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import axios from 'axios';
 import Photo from '../models/photo';
 import { googleAuth } from './googleAuth.service';
 
@@ -13,7 +14,7 @@ export class PhotoServiceService {
 
   async gettingdataFromApi(): Promise<void> {
     this.token = localStorage.getItem('token');
-    const response = await this._http.post(
+    const response = await axios.post(
       'https://photoslibrary.googleapis.com/v1/mediaItems:search',
       {
         pageSize: '100',
@@ -43,29 +44,23 @@ export class PhotoServiceService {
         },
       }
     );
-    console.log(
-      response.subscribe(
-        (res) => {
-          const x = JSON.parse(JSON.stringify(res));
-          console.log(x.mediaItems[0]);
-          const rawList: any[] = x.mediaItems;
 
-          rawList.forEach((obj: any, ind: number, arr: object[]) => {
-            const photoObject = new Photo(
-              obj.baseUrl,
-              obj.filename,
-              obj.id,
-              obj.mediaMetadata.creationTime,
-              obj.mimeType,
-              obj.productUrl
-            );
-            this.photoList.push(photoObject);
-          });
-        },
-        (err) => {
-          console.warn(err);
-        }
-      )
-    );
+    const x = JSON.parse(JSON.stringify(response.data));
+    console.log(x.mediaItems[0]);
+    const rawList: any[] = x.mediaItems;
+
+    rawList.forEach((obj: any, ind: number, arr: object[]) => {
+      const photoObject = new Photo(
+        obj.baseUrl,
+        obj.filename,
+        obj.id,
+        obj.description,
+        obj.photo,
+        obj.mediaMetadata.creationTime,
+        obj.mimeType,
+        obj.productUrl
+      );
+      this.photoList.push(photoObject);
+    });
   }
 }
