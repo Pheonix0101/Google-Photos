@@ -8,6 +8,8 @@ import { googleAuth } from '../services/googleAuth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
+
+// this class is responsible for login and logout. 
 export class LoginComponent implements OnInit {
   user: any;
   auth = getAuth();
@@ -17,15 +19,10 @@ export class LoginComponent implements OnInit {
   }
   async onGoogle() {
     await this._fService.signInWithGoogle();
-    // window.location.reload();
-    this._route.navigate(['/Photos'])
-
-  
+    this._route.navigate(['/Photos']);
   }
   onOut() {
     this._fService.signOutt();
     window.location.reload();
-    // console.warn('logged Out');
-    // this.user != this._fService.user
   }
 }

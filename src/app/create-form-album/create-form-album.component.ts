@@ -8,6 +8,8 @@ import { AlbumServiceService } from '../services/album-service.service';
   templateUrl: './create-form-album.component.html',
   styleUrls: ['./create-form-album.component.css'],
 })
+
+// this class is called when user try to create a new Album.
 export class CreateFormAlbumComponent implements OnInit {
   public static val: string;
   reactiveForm!: FormGroup;
@@ -28,6 +30,6 @@ export class CreateFormAlbumComponent implements OnInit {
     CreateFormAlbumComponent.val = this.reactiveForm.value.albumName;
     this._albumService.createAlbum(CreateFormAlbumComponent.val);
     console.log(CreateFormAlbumComponent.val);
-    this._roter.navigate(['/albumPhoto']);
+    this._roter.navigate(['/Album']);
   }
 }

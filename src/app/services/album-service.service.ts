@@ -93,7 +93,7 @@ export class AlbumServiceService {
     );
 
     const albumlist: any[] = albumResponse.data.albums;
-    // console.log(albumlist);
+      this.albumPhotoList =[];
 
     albumlist.forEach((val: any, ind: any, arr: any[]) => {
       const albumobject = new Album(

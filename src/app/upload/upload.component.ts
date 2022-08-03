@@ -7,6 +7,8 @@ import { UploadServiceService } from '../services/upload-service.service';
   templateUrl: './upload.component.html',
   styleUrls: ['./upload.component.css'],
 })
+// here we upload the Image from our System to Our local then with the
+//  help of Upload-service we will upload it to the Google Photo server.
 export class UploadComponent implements OnInit {
   public static selectedFile: File | null = null;
   constructor(

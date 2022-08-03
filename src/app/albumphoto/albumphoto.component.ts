@@ -8,6 +8,8 @@ import { PhotoServiceService } from '../services/photo-service.service';
   templateUrl: './albumphoto.component.html',
   styleUrls: ['./albumphoto.component.css'],
 })
+
+// this class is responsible for addding MediaItem into Album.
 export class AlbumphotoComponent implements OnInit {
   addToAlbumList: any[] = [];
   photoId: string = '';

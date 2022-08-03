@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { initializeApp } from 'firebase/app';
-import { getFirestore} from 'firebase/firestore/lite';
+import { getFirestore } from 'firebase/firestore/lite';
 import {
   getAuth,
   GoogleAuthProvider,
@@ -62,11 +62,9 @@ export class googleAuth {
     // The signed-in user info.
     this.user = (await result).user;
     console.log(this.user);
-   
   }
 
   signOutt() {
-  
     signOut(this.auth)
       .then((s) => {
         console.log(s);

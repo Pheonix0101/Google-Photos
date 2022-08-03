@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import Photo from '../models/photo';
-import { googleAuth } from '../services/googleAuth.service';
 import { PhotoServiceService } from '../services/photo-service.service';
 
 @Component({
@@ -8,16 +7,14 @@ import { PhotoServiceService } from '../services/photo-service.service';
   templateUrl: './photos.component.html',
   styleUrls: ['./photos.component.css'],
 })
+// this is the photo TimeLine view of the Application.
 export class PhotosComponent implements OnInit {
   photoList2: Photo[] = [];
 
-  constructor(
-    private _pService: PhotoServiceService
-  ) {}
+  constructor(private _pService: PhotoServiceService) {}
 
-  
   async ngOnInit(): Promise<void> {
-    this._pService.gettingdataFromApi();
+    await this._pService.gettingdataFromApi();
     this.photoList2 = this._pService.photoList;
   }
 }

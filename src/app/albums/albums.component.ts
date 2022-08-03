@@ -7,6 +7,7 @@ import { AlbumServiceService } from '../services/album-service.service';
   templateUrl: './albums.component.html',
   styleUrls: ['./albums.component.css'],
 })
+// this class is the Dashboard of Album 
 export class AlbumsComponent implements OnInit {
   albumListCopy: any[] = [];
   constructor(
@@ -17,16 +18,14 @@ export class AlbumsComponent implements OnInit {
   ngOnInit(): void {
     this._albumService.displayAlbumToUi();
     this.albumListCopy = this._albumService.albumPhotoList;
-    
   }
   addPhotoToThisAlbum(id: string) {
     this._albumService.selectedAlbumID = id;
     this._router.navigate(['/albumPhoto']);
   }
-  
-  viewAlbum(albumId:string){
+
+  viewAlbum(albumId: string) {
     this._albumService.selectedAlbumID = albumId;
     this._router.navigate(['/albumView']);
-
   }
 }
