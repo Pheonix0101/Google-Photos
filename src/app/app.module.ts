@@ -7,12 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { PhotosComponent } from './photos/photos.component';
 import { HeaderComponent } from './header/header.component';
-import { AlbumsComponent } from './albums/albums.component';
+import { AlbumsComponent } from './album/albums/albums.component';
 import { LoginComponent } from './login/login.component';
-import { CreateFormAlbumComponent } from './create-form-album/create-form-album.component';
+import { CreateFormAlbumComponent } from './album/create-form-album/create-form-album.component';
 import { UploadComponent } from './upload/upload.component';
-import { AlbumphotoComponent } from './albumphoto/albumphoto.component';
-import { AlbumViewComponent } from './album-view/album-view.component';
+import { AlbumphotoComponent } from './album/albumphoto/albumphoto.component';
+import { AlbumViewComponent } from './album/album-view/album-view.component';
 
 @NgModule({
   declarations: [

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AlbumViewComponent } from './album-view/album-view.component';
-import { AlbumphotoComponent } from './albumphoto/albumphoto.component';
-import { AlbumsComponent } from './albums/albums.component';
-import { CreateFormAlbumComponent } from './create-form-album/create-form-album.component';
+import { AlbumViewComponent } from './album/album-view/album-view.component';
+import { AlbumphotoComponent } from './album/albumphoto/albumphoto.component';
+import { AlbumsComponent } from './album/albums/albums.component';
+import { CreateFormAlbumComponent } from './album/create-form-album/create-form-album.component';
 import { LoginComponent } from './login/login.component';
 import { PhotosComponent } from './photos/photos.component';
 import { UploadComponent } from './upload/upload.component';
