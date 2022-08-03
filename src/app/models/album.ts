@@ -25,5 +25,3 @@ export default class Album {
     this.title = title;
   }
 }
-
-

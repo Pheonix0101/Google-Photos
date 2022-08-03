@@ -26,7 +26,7 @@ export class AlbumphotoComponent implements OnInit {
     console.log(id);
     this.photoId = id;
   }
-  addToAlbumToAPI() {
+  addSelectedPhotoToAlbum() {
     console.warn(this.photoId);
     this._albumService.addMediaItemToAlbum(this.photoId);
     this._router.navigate(['/Album']);

@@ -17,10 +17,16 @@ export class AlbumsComponent implements OnInit {
   ngOnInit(): void {
     this._albumService.displayAlbumToUi();
     this.albumListCopy = this._albumService.albumPhotoList;
-    this._albumService.displayingAlbumPhoto();
+    
   }
   addPhotoToThisAlbum(id: string) {
     this._albumService.selectedAlbumID = id;
     this._router.navigate(['/albumPhoto']);
+  }
+  
+  viewAlbum(albumId:string){
+    this._albumService.selectedAlbumID = albumId;
+    this._router.navigate(['/albumView']);
+
   }
 }

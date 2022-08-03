@@ -1,21 +1,11 @@
 <div class="row">
-    <div class="col-md-4">
-      <div class="container-fluid" *ngFor="let item of albumViewList">
-  
-       
-        <div class="sunny">
-          <img
-          class="card-img-top mx-auto mt-auto mb-auto sunnyimg" 
-          src="{{ item.baseUrl }}"
-          alt=""
-        />
-
-        <!-- <img
-        class="card-img-top mx-auto mt-auto mb-auto sunnyimg" 
-        src="{{ item.productUrl }}"
+  <div class="col-md-4" *ngFor="let item of albumViewList">
+    <div class="sunny">
+      <img
+        class="card-img-top mx-auto mt-auto mb-auto sunnyimg"
+        src="{{ item.baseUrl }}"
         alt=""
-      /> -->
- 
-    <a href="{{item.productUrl}}" target="_blank"> see</a>
-
-      </div>
+      />
+    </div>
+  </div>
+</div>

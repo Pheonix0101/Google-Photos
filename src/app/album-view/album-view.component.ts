@@ -10,10 +10,10 @@ export class AlbumViewComponent implements OnInit {
   albumViewList:any[] =[];
   constructor(private _albumService:AlbumServiceService) { }
 
-  ngOnInit(): void {
+ async ngOnInit(): Promise<void> {
+  await this._albumService.displayingAlbumPhoto();
     this.albumViewList = this._albumService.albumMediaItems;
-    console.log(this.albumViewList);
-    
+        
   }
 
 

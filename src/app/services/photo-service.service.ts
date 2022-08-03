@@ -10,7 +10,7 @@ import { googleAuth } from './googleAuth.service';
 export class PhotoServiceService {
   photoList: Photo[] = [];
   token: any;
-  constructor(private _http: HttpClient, private _googleAuth: googleAuth) {}
+  constructor() {}
 
   async gettingdataFromApi(): Promise<void> {
     this.token = localStorage.getItem('token');

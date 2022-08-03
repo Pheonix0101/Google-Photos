@@ -1,6 +1,12 @@
 <div class="row">
   <div class="col-md-4" *ngFor="let item of albumListCopy">
-    <a routerLink="/albumView" class="btn btn-dark">View Album</a>
+    <button
+    type="button"
+    class="btn btn-dark"
+    (click)="viewAlbum(item.id)"
+  >
+    View Photos
+  </button>
     <div class="sunnyCard">
       <img
         class="card-img-top mx-auto mt-auto mb-auto sunnyimg"
@@ -21,8 +27,8 @@
     </div>
   </div>
 </div>
-<div class="row-md-8">
-  <h3>Create new Album</h3>
+<div class="row-md-8" style="text-align: center;">
+  <h3 style="padding-top: 10px; color: green;">Create new Album</h3>
   <div class="buttons">
     <a routerLink="/createAlbum" class="btn btn-outline-warning"
       >Create Album</a

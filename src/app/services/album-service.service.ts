@@ -127,7 +127,13 @@ export class AlbumServiceService {
       }
     );
     console.log(displayAlbumResponse);
+
     const albumsPhoto: any[] = displayAlbumResponse.data.mediaItems;
+    console.warn(albumsPhoto);
+    
+    this.albumMediaItems = [];
+    console.log(this.albumMediaItems);
+    
     albumsPhoto.forEach((value: any, index: number, array: any[]) => {
       const albumPhotoObj = new Photo(
         value.baseUrl,
@@ -135,10 +141,11 @@ export class AlbumServiceService {
         value.id,
         value.description,
         value.mediaMetadata.photo,
-        value.time,
+        "",
         value.mimeType,
         value.productUrl
       );
+
       this.albumMediaItems.push(albumPhotoObj);
     });
     console.warn(this.albumMediaItems);
