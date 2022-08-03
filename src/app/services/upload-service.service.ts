@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import axios from 'axios';
-import { UploadComponent } from '../upload/upload.component';
+import { UploadComponent } from '../components/upload/upload.component';
 
 @Injectable({
   providedIn: 'root',

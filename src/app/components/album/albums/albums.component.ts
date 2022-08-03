@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlbumServiceService } from '../../services/album-service.service';
+import { AlbumServiceService } from '../../../services/album-service.service';
 
 @Component({
   selector: 'app-albums',

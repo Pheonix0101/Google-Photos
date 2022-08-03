@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AlbumServiceService } from '../../services/album-service.service';
+import { AlbumServiceService } from '../../../services/album-service.service';
 
 @Component({
   selector: 'app-create-form-album',

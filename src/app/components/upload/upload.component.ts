@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UploadServiceService } from '../services/upload-service.service';
+import { UploadServiceService } from '../../services/upload-service.service';
 
 @Component({
   selector: 'app-upload',

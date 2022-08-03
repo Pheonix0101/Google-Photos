@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User, Auth, getAuth } from 'firebase/auth';
-import { googleAuth } from '../services/googleAuth.service';
+import { googleAuth } from '../../services/googleAuth.service';
 
 @Component({
   selector: 'app-login',

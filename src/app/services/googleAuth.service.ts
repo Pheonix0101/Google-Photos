@@ -43,24 +43,23 @@ export class googleAuth {
 
     provider.addScope('https://www.googleapis.com/auth/photoslibrary');
 
-    const result = signInWithPopup(this.auth, provider);
+    const result = await signInWithPopup(this.auth, provider);
     //  ((result) => {
 
     // This gives you a Google Access Token. You can use it to access the Google API.
-    this.auth.onAuthStateChanged;
 
-    const credential = GoogleAuthProvider.credentialFromResult(await result);
+    const credential = GoogleAuthProvider.credentialFromResult(result);
     console.log(`credential = ${credential}`);
 
     googleAuth.abtoken = credential?.accessToken;
     if (googleAuth.abtoken) {
       localStorage.setItem('token', googleAuth.abtoken);
     }
-
+    
     console.log(`token = ${googleAuth.abtoken}`);
 
     // The signed-in user info.
-    this.user = (await result).user;
+    this.user = result.user;
     console.log(this.user);
   }
 

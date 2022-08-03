@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AlbumViewComponent } from './album/album-view/album-view.component';
-import { AlbumphotoComponent } from './album/albumphoto/albumphoto.component';
-import { AlbumsComponent } from './album/albums/albums.component';
-import { CreateFormAlbumComponent } from './album/create-form-album/create-form-album.component';
-import { LoginComponent } from './login/login.component';
-import { PhotosComponent } from './photos/photos.component';
-import { UploadComponent } from './upload/upload.component';
+import { AlbumViewComponent } from './components/album/album-view/album-view.component';
+import { AlbumphotoComponent } from './components/album/albumphoto/albumphoto.component';
+import { AlbumsComponent } from './components/album/albums/albums.component';
+import { CreateFormAlbumComponent } from './components/album/create-form-album/create-form-album.component';
+import { LoginComponent } from './components/login/login.component';
+import { PhotosComponent } from './components/photos/photos.component';
+import { UploadComponent } from './components/upload/upload.component';
 
 const routes: Routes = [
   {path:'login', component: LoginComponent},
