@@ -106,7 +106,6 @@ export class AlbumServiceService {
         val.title
       );
       this.albumPhotoList.push(albumobject);
-      console.log(this.albumPhotoList[0].id);
     });
   }
 
@@ -129,10 +128,8 @@ export class AlbumServiceService {
     console.log(displayAlbumResponse);
 
     const albumsPhoto: any[] = displayAlbumResponse.data.mediaItems;
-    console.warn(albumsPhoto);
     
     this.albumMediaItems = [];
-    console.log(this.albumMediaItems);
     
     albumsPhoto.forEach((value: any, index: number, array: any[]) => {
       const albumPhotoObj = new Photo(
