@@ -19,7 +19,7 @@ export class UploadServiceService {
       .post(
         'https://photoslibrary.googleapis.com/v1/uploads',
         UploadComponent.selectedFile,
-
+        
         {
           headers: {
             'Content-type': 'application/octet-stream',
